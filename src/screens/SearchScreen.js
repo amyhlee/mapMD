@@ -11,21 +11,37 @@ const SearchScreen = () => {
   const [searchApi, results, errorMessage] = useResults()
 
   return (
-    <View>
+    <>
+    <View style={styles.container}>
       <Header
-      placement="center"
-      centerComponent={{text: "Find Doc"}
+      centerComponent={{text: "Find Doc", style: {fontSize: 30, fontWeight: 'bold', textAlign: 'center'}}}
+      containerStyle={{
+        height: 75,
+        backgroundColor: '#FFB6C1',
+        justifyContent: 'space-around',
+        marginBottom: 15
+      }}
       />
-      <ScrollView>
+    </View>
+    <ScrollView style={styles.list}>
         <SearchList
           results={results}
-          header="OB/ GYN"
+          header="OB/ GYN currently near you"
         />
-      </ScrollView>
-    </View>
+    </ScrollView>
+    </>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  header: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    backgroundColor: 'red',
+  },
+  container: {
+    alignContent: 'center'
+  }
+})
 
 export default SearchScreen;

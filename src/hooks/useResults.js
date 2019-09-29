@@ -14,7 +14,6 @@ export default () => {
     await Permissions.askAsync(Permissions.LOCATION);
 
     let location = await Location.getCurrentPositionAsync({});
-    console.log('Get location!!!!', location)
     return {
       latitude: location.coords.latitude,
       longitude: location.coords.longitude
@@ -23,7 +22,6 @@ export default () => {
 
   const searchApi = async (searchWord, location) => {
     try {
-      console.log('searchAPI ', location)
       const response = await API.get('/search', {
         params: {
           limit: 50,

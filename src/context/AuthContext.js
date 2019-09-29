@@ -1,6 +1,5 @@
 import createDataContext from './createDataContext'
 import authApi from '../api/authApi'
-// import { runInNewContext } from 'vm'
 
 const authReducer = (state, action) => {
   switch (action.type) {

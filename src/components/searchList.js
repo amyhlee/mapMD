@@ -39,8 +39,7 @@ const styles = StyleSheet.create({
      marginBottom: 10
    },
    list: {
-     border:
-     flex: 1
+     marginBottom: 10
    }
 })
 

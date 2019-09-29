@@ -15,15 +15,20 @@ const ShowResultsScreen = ({ navigation }) => {
     }
   }
 
-
+  const getReviews = async (id) => {
+    try {
+      const response = await API.get(`/${id}/reviews`)
+      setResult(response.data);
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   useEffect(() => {
     getBusiness(id)
+    getReviews(id)
   }, [])
 
-  // useEffect(() => {
-  //   getReviews(id)
-  // }, [])
 
   if (!result) {
     return null;
@@ -31,6 +36,7 @@ const ShowResultsScreen = ({ navigation }) => {
 
 
   return (
+
     <ScrollView style={styles.container}>
       <Text style={styles.name}>{result.name}</Text>
       <FlatList
@@ -47,13 +53,16 @@ const ShowResultsScreen = ({ navigation }) => {
         onPress={() => Linking.openURL(result.url)}>
         Website
       </Text>
-      {/* {console.log(result)} */}
       {result.location && result.location.display_address.map((line) => {
         return <Text key={line}>{line}</Text>
       })}
       <Text style={styles.text}>{result.rating} Stars {"\n"}</Text>
       <Text style={styles.text}>Patient Reviews</Text>
       <Text>{result.review_count} Reviews {"\n"}</Text>
+
+      {/* {result.reviews.length && result.reviews.map((review) => {
+        return <Text key={review}>{review}</Text>
+      })} */}
     </ScrollView>
   )
 }
