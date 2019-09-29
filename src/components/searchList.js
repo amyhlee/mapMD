@@ -12,8 +12,7 @@ const SearchList = ( { header, results, navigation } ) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>{header}</Text>
-      <FlatList
-        horizontal={true}
+      <FlatList style={styles.list}
         showsHorizontalScrollIndicator={false}
         data={results}
         keyExtractor={result => result.id}
@@ -38,6 +37,10 @@ const styles = StyleSheet.create({
   },
    container: {
      marginBottom: 10
+   },
+   list: {
+     border:
+     flex: 1
    }
 })
 

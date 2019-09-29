@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, FlatList, Image, Linking } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Image, Linking, ScrollView } from 'react-native'
 import API from '../api/API'
 
 const ShowResultsScreen = ({ navigation }) => {
@@ -8,21 +8,14 @@ const ShowResultsScreen = ({ navigation }) => {
 
   const getBusiness = async (id) => {
     try {
-      const response = await API.get(`${id}`)
+      const response = await API.get(`/${id}`)
       setResult(response.data);
     } catch (error) {
       console.error(error)
     }
   }
 
-  // const getReviews = async (id) => {
-  //   try {
-  //     const response = await API.get(`${id}`/reviews)
-  //     setResult(response.data);
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
+
 
   useEffect(() => {
     getBusiness(id)
@@ -36,8 +29,9 @@ const ShowResultsScreen = ({ navigation }) => {
     return null;
   }
 
+
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.name}>{result.name}</Text>
       <FlatList
         horizontal={true}
@@ -50,15 +44,17 @@ const ShowResultsScreen = ({ navigation }) => {
 
       <Text style={styles.text}>Phone: {result.display_phone}</Text>
       <Text style={styles.link}
-        onPress={() => Linking.openURL(results.url)}>
+        onPress={() => Linking.openURL(result.url)}>
         Website
       </Text>
-      {/* <Text>{{result.location.display_address}}</Text> */}
-      {/* <Text>{result.hours}</Text> */}
+      {/* {console.log(result)} */}
+      {result.location && result.location.display_address.map((line) => {
+        return <Text key={line}>{line}</Text>
+      })}
       <Text style={styles.text}>{result.rating} Stars {"\n"}</Text>
       <Text style={styles.text}>Patient Reviews</Text>
       <Text>{result.review_count} Reviews {"\n"}</Text>
-    </View>
+    </ScrollView>
   )
 }
 

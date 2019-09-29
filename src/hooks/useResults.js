@@ -2,18 +2,34 @@ import { useEffect, useState } from 'react'
 import API from '../api/API'
 import { NavigationContext } from 'react-navigation'
 import Axios from 'axios'
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
+
 
 export default () => {
   const [results, setResults] = useState([]);
   const [errorMessage, setErrorMessage] = useState('')
 
-  const searchApi = async (searchWord) => {
+  const getLocation = async () => {
+    await Permissions.askAsync(Permissions.LOCATION);
+
+    let location = await Location.getCurrentPositionAsync({});
+    console.log('Get location!!!!', location)
+    return {
+      latitude: location.coords.latitude,
+      longitude: location.coords.longitude
+    }
+  }
+
+  const searchApi = async (searchWord, location) => {
     try {
+      console.log('searchAPI ', location)
       const response = await API.get('/search', {
         params: {
           limit: 50,
           term: searchWord,
-          location: 'New York'
+          latitude: location.latitude,
+          longitude: location.longitude
         }
       })
       setResults(response.data.businesses)
@@ -22,8 +38,13 @@ export default () => {
     }
   }
 
+  const search = async () => {
+    const location = await getLocation()
+    searchApi('obgyn', location)
+  }
+
   useEffect(() => {
-    searchApi('fertility')
+    search();
   }, []);
 
   return [searchApi, results, errorMessage]
