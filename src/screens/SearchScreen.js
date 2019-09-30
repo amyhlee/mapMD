@@ -36,10 +36,12 @@ const SearchScreen = () => {
 const styles = StyleSheet.create({
   header: {
     fontSize: 30,
-    fontWeight: 'bold',
-    backgroundColor: 'red',
+    fontWeight: 'bold'
   },
   container: {
+    alignContent: 'center'
+  },
+  list: {
     alignContent: 'center'
   }
 })

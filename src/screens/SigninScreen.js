@@ -1,11 +1,12 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import LoginForm from '../components/LoginForm'
 
 
 const SigninScreen = () => {
   return (
     <View>
-      <Text>Sign In</Text>
+      <LoginForm />
     </View>
   )
 }
