@@ -1,7 +1,8 @@
 import React from 'react'
 import { View, Button, Text, StyleSheet, ActivityIndicator } from 'react-native'
 import { Input, errorMessage } from 'react-native-elements'
-import firebase from 'firebase'
+import * as firebase from 'firebase/app'
+import 'firebase/auth'
 import { loginInputChange, login } from '../store/index'
 import { connect } from 'react-redux'
 import _ from 'lodash'
@@ -10,13 +11,20 @@ import SearchScreen from '../screens/SearchScreen'
 
 
 class LoginForm extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      email: '',
+      password: '',
+      isLoading: false
+    }
+  }
 
-  // componentWillReceiveProps(nextProps) {
-  //   console.log(nextProps)
-  //   if (!_.isEmpty(nextProps.user)) {
-  //     this.props.navigation.navigate('Search')
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (!_.isEmpty(nextProps.user)) {
+      this.props.navigation.navigate('mainFlow')
+    }
+  }
 
   login() {
     const { navigate } = this.props.navigation
@@ -33,12 +41,11 @@ class LoginForm extends React.Component {
       )
     }
     return (
-      <Button title="Login" onPress={() => navigate('SearchScreen')} backgroundColor="#3bd3d4" />
+      <Button title="Login" onPress={this.login.bind(this)} backgroundColor="#3bd3d4" />
     )
   }
 
   showError() {
-    console.log(this.props.error)
     if (this.props.error) {
       return (
         <Text errorStyle={{ color: 'red' }} errorMessage="Authentication failed"></Text>

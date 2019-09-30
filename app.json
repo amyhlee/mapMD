@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Find Doc",
-    "slug": "findDoc",
+    "name": "Map MD",
+    "slug": "MapMD",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [

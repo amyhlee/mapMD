@@ -51,7 +51,7 @@ const ShowResultsScreen = ({ navigation }) => {
       <Text style={styles.text}>Phone: {result.display_phone}</Text>
       <Text style={styles.link}
         onPress={() => Linking.openURL(result.url)}>
-        Website
+        See more details on Yelp
       </Text>
       {result.location && result.location.display_address.map((line) => {
         return <Text key={line}>{line}</Text>

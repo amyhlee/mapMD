@@ -14,7 +14,6 @@ const signup = (dispatch) => {
   return async ({ email, password }) => {
     try {
       const response = await authApi.post('/signup', { email, password })
-      console.log(response.data) //********************************** */
     } catch (error) {
       dispatch({ type: 'add_error', payload: 'Something went wrong with sign up' })
     }
@@ -28,10 +27,9 @@ const signin = (dispatch) => {
 }
 
 const signout = (dispatch) => {
-  return () => {
 
-  }
 }
+
 export const { Provider, Context } = createDataContext(
   authReducer,
   { signin, signout, signup },

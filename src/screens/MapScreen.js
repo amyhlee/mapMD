@@ -14,7 +14,6 @@ const MapScreen = () => {
     longitude: null
   })
 
-  console.log(location)
 
   const startWatching = async () => {
     try {

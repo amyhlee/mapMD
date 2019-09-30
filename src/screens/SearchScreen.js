@@ -14,11 +14,10 @@ const SearchScreen = () => {
     <>
     <View style={styles.container}>
       <Header
-      centerComponent={{text: "Find Doc", style: {fontSize: 30, fontWeight: 'bold', textAlign: 'center'}}}
+      centerComponent={{text: "Map MD", style: {fontSize: 30, fontWeight: 'bold', textAlign: 'center'}}}
       containerStyle={{
         height: 75,
         backgroundColor: '#FFB6C1',
-        justifyContent: 'space-around',
         marginBottom: 15
       }}
       />
