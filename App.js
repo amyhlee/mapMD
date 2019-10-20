@@ -5,16 +5,13 @@ import { createBottomTabNavigator } from 'react-navigation-tabs'
 import SearchScreen from './src/screens/SearchScreen'
 import ShowResultsScreen from './src/screens/ShowResultsScreen'
 import SignupScreen from './src/screens/SignupScreen'
-// import SigninScreen from './src/screens/SigninScreen'
-// import AccountScreen from './src/screens/AccountScreen'
 import MapScreen from './src/screens/MapScreen'
-// import  { Provider as AuthProvider } from './src/context/AuthContext'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import reducers from './src/store/reducers'
 import ReduxThunk from 'redux-thunk'
 import * as firebase from 'firebase/app'
-import firebaseConfig from './config/index'
+import {firebaseConfig} from './config/index'
 import 'firebase/auth'
 import LoginForm from './src/components/LoginForm';
 
@@ -28,22 +25,15 @@ class App extends React.Component {
   }
 
   render() {
-    // const store = createStore(reducers, {}, applyMiddleware(ReduxThunk))
     return (
-      // <Provider store={store}>
         <AppContainer />
-      // </Provider>
     )
   }
 }
 
 const switchNavigator = createSwitchNavigator({
   loginFlow: createStackNavigator({
-    Signup: SignupScreen,
-    // Signin: SigninScreen,
-    // navigationOptions: {
-    //   title: 'Login'
-    // }
+    Signup: SignupScreen
   }),
   mainFlow: createBottomTabNavigator({
     Listings: createStackNavigator({
@@ -51,7 +41,6 @@ const switchNavigator = createSwitchNavigator({
       ShowResults: ShowResultsScreen
     }),
     Map: MapScreen
-    // Account: AccountScreen
   })
 })
 

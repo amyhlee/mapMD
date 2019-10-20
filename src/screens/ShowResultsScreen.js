@@ -57,12 +57,9 @@ const ShowResultsScreen = ({ navigation }) => {
         return <Text key={line}>{line}</Text>
       })}
       <Text style={styles.text}>{result.rating} Stars {"\n"}</Text>
-      <Text style={styles.text}>Patient Reviews</Text>
-      <Text>{result.review_count} Reviews {"\n"}</Text>
+      {/* <Text style={styles.text}>Patient Reviews</Text>
+      <Text>{result.review_count} Reviews {"\n"}</Text> */}
 
-      {/* {result.reviews.length && result.reviews.map((review) => {
-        return <Text key={review}>{review}</Text>
-      })} */}
     </ScrollView>
   )
 }

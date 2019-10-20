@@ -1,12 +1,12 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyBQ7QeFulCz5j59D9124YcUB0k7Z_fvb78",
-    authDomain: "map-md.firebaseapp.com",
-    databaseURL: "https://map-md.firebaseio.com",
-    projectId: "map-md",
-    storageBucket: "",
-    messagingSenderId: "1052024472585",
-    appId: "1:1052024472585:web:4c3cadc666d93dd43824d8",
-    measurementId: "G-396994SZN5"
-  };
+  apiKey: "AIzaSyAP8EVVAZBK3OV5JskvPk25ILnpg3eFT3A",
+  authDomain: "mapmd-b13bb.firebaseapp.com",
+  databaseURL: "https://mapmd-b13bb.firebaseio.com",
+  projectId: "mapmd-b13bb",
+  storageBucket: "mapmd-b13bb.appspot.com",
+  messagingSenderId: "823046234373",
+  appId: "1:823046234373:web:3686e10961fab8d671576c",
+  measurementId: "G-PPT8KBZCCB"
+};
 
 
