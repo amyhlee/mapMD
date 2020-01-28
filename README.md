@@ -8,10 +8,10 @@ Map MD is an app that finds a user's current location and pulls data to provide 
 
 React and Firebase
 
-<img src="images/resultsPage.jpg" height="20">
-<img src="images/result.jpg" height="20">
-<img src="images/map.jpg" height="20">
-<img src="images/yelp.jpg" height="20">
+<img src="images/resultsPage.jpg" height="50">
+<img src="images/result.jpg" height="50">
+<img src="images/map.jpg" height="50">
+<img src="images/yelp.jpg" height="50">
 
 ![Results Page](images/resultsPage.jpg)
 
