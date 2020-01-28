@@ -8,6 +8,8 @@ Map MD is an app that finds a user's current location and pulls data to provide 
 
 React and Firebase
 
+## Images
+
 ### Geolocation of User
 <img src="images/map.jpg" height="900">
 
