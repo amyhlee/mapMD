@@ -10,16 +10,16 @@ React and Firebase
 
 ## Images
 
-Geolocation of User
+#### Geolocation of User
 <img src="images/map.jpg" height="700">
 
-Listing of Nearby Doctors
+#### Listing of Nearby Doctors
 <img src="images/resultsPage.jpg" height="900">
 
-Selection of Single Doctor
+#### Selection of Single Doctor
 <img src="images/result.jpg" height="900">
 
-Connection to Yelp Review
+#### Connection to Yelp Review
 <img src="images/yelp.jpg" height="900">
 
 
