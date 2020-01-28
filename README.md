@@ -8,16 +8,16 @@ Map MD is an app that finds a user's current location and pulls data to provide 
 
 React and Firebase
 
-<img src="images/resultsPage.jpg" height="20">
-<img src="images/result.jpg" height="20">
-<img src="images/map.jpg" height="20">
-<img src="images/yelp.jpg" height="20">
+### Geolocation of User
+<img src="images/map.jpg" height="900">
 
-![Geolocation of User](images/map.jpg)
+### Listing of Nearby Doctors
+<img src="images/resultsPage.jpg" height="900">
 
-![Results Page](images/resultsPage.jpg)
+### Selection of Single Doctor
+<img src="images/result.jpg" height="900">
 
-![Selected Doctor](images/result.jpg)
+### Connection to Yelp Review
+<img src="images/yelp.jpg" height="900">
 
-![Yelp Review](images/yelp.jpg)
 
